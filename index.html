@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miles Apart, Hearts Together – Poland ❤ India</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="back2.js">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Miles Apart, Hearts Together</h1>
+      <div class="flags" aria-label="Countries">🇵🇱 Poland • India 🇮🇳</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="people">
+        <div class="person">
+          <div class="avatar">
+            <img src="WhatsApp Image 2025-11-02 at 18.44.04_1b331ec8.jpg" alt="Lover from Poland" />
+            <span class="badge" title="Poland">🇵🇱</span>
+          </div>
+          <h3 contenteditable="true" spellcheck="false">Your Name (Poland)</h3>
+          <p contenteditable="true" spellcheck="false" class="city cityA">Warsaw, Poland</p>
+        </div>
+
+        <div class="person person--right">
+          <div class="avatar">
+            <img src="WhatsApp Image 2025-11-02 at 18.44.03_d917bec0.jpg" alt="Lover from India" />
+            <span class="badge" title="India">🇮🇳</span>
+          </div>
+          <h3 contenteditable="true" spellcheck="false">Your Name (India)</h3>
+          <p contenteditable="true" spellcheck="false" class="city cityB">New Delhi, India</p>
+        </div>
+      </div>
+
+      <div class="love-line">
+        <div class="line" aria-hidden="true"></div>
+        <div class="heart" aria-hidden="true">❤</div>
+        <div class="distance">
+          Distance: <span id="distanceKm">…</span> km
+          <button id="editLocationsBtn" class="btn btn-small" type="button">Edit locations</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION MODAL -->
+    <div id="locationModal" class="modal" aria-hidden="true" role="dialog" aria-modal="false">
+      <div class="modal__inner">
+        <button class="modal__close" aria-label="Close">&times;</button>
+        <h3>Set your cities (optional)</h3>
+        <p class="muted">Enter latitude and longitude to estimate your distance. Defaults use Warsaw ↔ New Delhi.</p>
+
+        <form id="locForm" class="grid-2">
+          <div class="card light">
+            <h4>Person in Poland</h4>
+            <label for="cityA">City</label>
+            <input id="cityA" type="text" value="Warsaw" />
+            <div class="grid-2 tight">
+              <div>
+                <label for="latA">Latitude</label>
+                <input id="latA" type="number" step="any" value="52.2297" required />
+              </div>
+              <div>
+                <label for="lngA">Longitude</label>
+                <input id="lngA" type="number" step="any" value="21.0122" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="card light">
+            <h4>Person in India</h4>
+            <label for="cityB">City</label>
+            <input id="cityB" type="text" value="New Delhi" />
+            <div class="grid-2 tight">
+              <div>
+                <label for="latB">Latitude</label>
+                <input id="latB" type="number" step="any" value="28.6139" required />
+              </div>
+              <div>
+                <label for="lngB">Longitude</label>
+                <input id="lngB" type="number" step="any" value="77.2090" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" type="submit">Save</button>
+            <button class="btn btn-ghost modal__close" type="button">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown container">
+      <h2>Countdown to the next hug</h2>
+      <div class="control">
+        <input id="meetDate" type="datetime-local" />
+        <button id="saveDateBtn" class="btn" type="button">Save date</button>
+      </div>
+      <p class="timer" id="timer">Pick a date to start the countdown.</p>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery container">
+      <h2>Our photos</h2>
+      <div class="grid-gallery">
+        <figure class="g-item">
+          <img src="WhatsApp Image 2025-11-02 at 17.09.05_e196cb04.jpg" alt="Poland memory 1" data-index="0" />
+          <figcaption></figcaption>
+        </figure>
+        <figure class="g-item">
+          <img src="WhatsApp Image 2025-11-02 at 18.15.31_2ceff6af.jpg" alt="Poland memory 2" data-index="1" />
+          <figcaption></figcaption>
+        </figure>
+        <figure class="g-item">
+          <img src="WhatsApp Image 2025-11-02 at 18.15.31_9fb660bb.jpg" alt="Poland memory 3" data-index="2" />
+          <figcaption></figcaption>
+        </figure>
+        <figure class="g-item">
+          <img src="WhatsApp Image 2025-11-02 at 18.15.31_66645a4a.jpg" alt="India memory 1" data-index="3" />
+          <figcaption></figcaption>
+        </figure>
+        <figure class="g-item">
+          <img src="WhatsApp Image 2025-11-02 at 18.15.31_d1986e48.jpg" alt="India memory 2" data-index="4" />
+          <figcaption></figcaption>
+        </figure>
+        <figure class="g-item">
+          <img src="WhatsApp Image 2025-11-02 at 18.15.31_f6752b22.jpg" alt="India memory 3" data-index="5" />
+          <figcaption></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="close" aria-label="Close">&times;</button>
+      <button class="nav prev" aria-label="Previous">❮</button>
+      <img id="lightboxImg" src="" alt="Photo" />
+      <button class="nav next" aria-label="Next">❯</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Made with ❤ across continents.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
